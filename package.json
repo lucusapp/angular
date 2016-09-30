@@ -11,5 +11,9 @@
     "url": "tutorial"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "jade": "^1.11.0",
+    "mongodb": "^2.2.10"
+  }
 }

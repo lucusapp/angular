@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" ng-app="app">
 <head>
       <meta charset="utf-8"/>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,16 +7,20 @@
       <link rel="stylesheet" href="/css/bootstrap.css" />
 
 </head>
-<body>
+<body ng-controller="NivelCtrol">
     <div class="container">
       <h3> Elegir Jugador </h3>
       <fieldset>
           <legend>Jugadores</legend>
           <label> Nombre </label>
-          <select></select>
+          <select ng-model="nivel" ng-change="cargarjug()" ng-options="d.codnivel as d.desnivel for d in nivel"></select>
           <label> Nivel </label>
-          <select></select>
+          <select ng-model="jugador">
+              <opcion ng-repeat="p in jugad | filter:{codnivel:nivel}" value="{{p.codjug}}">{{p.jugad}}</option>
+          </select>
       </fieldset>
     </div>
+    <script type="text/javascript" src="/js/angular.js"></script>
+    <script type="text/javascript" src="/js/ubigeo.js"></script>
 </body>
 </html>
