@@ -1,15 +1,31 @@
 doctype html
-html(lang='es')
+html
   head
-    title titulo
-    link(rel='stylesheet', href='/css/bootstrap.css')
+    meta(charset='utf-8')
+    title appmachine
   body
-    .container
-      h1(align='center') titulo
-      fieldset
-        legend Nivel
-        label Niveles
-        select
-        br
-        label Jugadores
-        select
+    script.
+      window.fbAsyncInit = function() {
+      FB.init({
+      appId      : '792985757511365',
+      xfbml      : true,
+      version    : 'v2.8'
+      });
+      FB.AppEvents.logPageView();
+      };
+      (function(d, s, id){
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {return;}
+      js = d.createElement(s); js.id = id;
+      js.src = "https://connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+      FB.api(
+      '/autosflores',
+      'GET',
+      {"fields":"feed{full_picture,name,message}"},
+      function(response) {
+      console.log();
+      // Insert your code here
+      }
+      );

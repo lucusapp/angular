@@ -1,4 +1,8 @@
+
+var ug = require('../models/ubigeo');
+
 //manejador de rutas
+
 
 module.exports = exports = {
 //vamos a exportar un objeto
@@ -10,5 +14,11 @@ module.exports = exports = {
       //esto sustituirá a lo que hasta el momento teniamos en app.js en la
       //linea app.get('/', (ahora en lugar de toda la función conlocaremos index))
       //por ultimo crearemos una variable ubigeo = require ('./controllers/ubigeo')
+    },
+
+    dpto: function(req,res) {
+      ug.cargarJugadores(function(data){
+        res.json(data)
+      });
     }
 };

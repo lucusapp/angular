@@ -16,7 +16,7 @@
           <select ng-model="nivel" ng-change="cargarjug()" ng-options="d.codnivel as d.desnivel for d in nivel"></select>
           <label> Nivel </label>
           <select ng-model="jugador">
-              <opcion ng-repeat="p in jugad | filter:{codnivel:nivel}" value="{{p.codjug}}">{{p.jugad}}</option>
+              <opcion ng-repeat="p in jugad | filter:{codnivel:nivel}" value="{{p.codjug}}" {{p.jugad}}</option>
           </select>
       </fieldset>
     </div>
